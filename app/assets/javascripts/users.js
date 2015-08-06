@@ -40,17 +40,9 @@ $(function() {
 			$(".activity-error").css("display","inherit");
 			return false;
 		}
-		else
-			return true;
-	});
-
-	$("#second-button").click(function(e){
-		if ($("#amount").val() == 0) {
-				e.preventDefault();
-				$(".budget-error").css("display","inherit");
-				return false;}
 		else {
-				return true;}
+			return true;
+		}
 	});
 
  	function detailsEmpty(){
@@ -86,7 +78,7 @@ $(function() {
 	$("#btn-submit").click(function(e){
 		detailsEmpty();
 		e.preventDefault();
-		var maxBudget = $("#amount").val()
+		var dislike = $("#dislike").val()
 		var feedback = $("#feedback").val()
 		var userName = $("#user-name").val()
 		var userEmail = $("#user-email").val()
@@ -96,12 +88,11 @@ $(function() {
 			url: '/users',
 			data: {
 				packages_selected: packagesArray,
-				max_budget: maxBudget,
+				dislike_feedback: dislike,
 				feedback: feedback,
 				user_name: userName,
 				user_email: userEmail}
 			}).done(function(result) {
-				debugger
 				$(".loading-gif").css("display","none");
 	  			$("#carousel").html(result);
 			});
