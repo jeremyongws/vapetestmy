@@ -1,0 +1,136 @@
+<div class="users new">
+  <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item active" id="package">
+        <div class="container">
+
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="section-head">
+              <h2 class="section-heading">Pick the awesomest of them all!</h2>
+              <h3 class="section-subheading text-muted">Break the rules and pick more than one</h3>
+               <div class="col-sm-8 col-sm-offset-2 error-message activity-error">Dude, are you not into awesomeness?</div>
+            </div>
+
+            <div class="col-sm-10 col-sm-offset-1">
+              <% count = 0 %>
+              <% @flavors.each do |flavor| %>
+                <% if count % 2 == 0 %>
+                  <div class="col-sm-6">
+
+                    <div class="activity-option">
+                        <i class="fa fa-circle"></i>
+                        <i class="fa fa-check-circle hidden"></i>
+                        <span class="activity-text"><%= flavor.name %></span>
+                    </div>
+                  </div>
+                <% else %>
+                  <div class="col-sm-6">
+                      <div class="activity-option">
+                          <i class="fa fa-circle"></i>
+                          <i class="fa fa-check-circle hidden"></i>
+                          <span class="activity-text"><%= flavor.name %></span>
+                      </div>
+                  </div>
+                <% end %>
+                <% count += 1 %>
+              <% end %>
+            </div>
+            <div class="col-sm-12 next-submit-btn">
+              <a id="first-button" class="btn btn-default" data-slide="next" href="#carousel" role="button">Next</a>
+            </div>
+
+
+          </div>
+      </div>
+    </div>
+
+    <div class="item" id="feedback">
+      <div class="container">
+
+          <div class="col-sm-10 col-sm-offset-1">
+            <div class="section-head">
+                <h2 class="section-heading">Any Flavors You Absolutely Don't Like?</h2>
+            </div>
+              <div class="col-sm-8 col-sm-offset-2">
+                <textarea rows="8" placeholder="Let us know so we can plan your e-liquid preference!" id="dislike"></textarea>
+              </div>
+
+              <div class="col-sm-12 next-submit-btn">
+                <a class="btn btn-default" data-slide="prev" href="#carousel" role="button" >Back</a>
+                <a class="btn btn-default" data-slide="next" href="#carousel" role="button">Next</a>
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+    <div class="item" id="feedback">
+      <div class="container">
+
+          <div class="col-sm-10 col-sm-offset-1">
+            <div class="section-head">
+                <h2 class="section-heading">Any other preferences or special requests? <br/>(We'll do out best to honor them.) </h2>
+            </div>
+              <div class="col-sm-8 col-sm-offset-2">
+                <textarea rows="8" placeholder="Let us know!" id="feedback"></textarea>
+              </div>
+
+              <div class="col-sm-12 next-submit-btn">
+                <a class="btn btn-default" data-slide="prev" href="#carousel" role="button" >Back</a>
+                <a class="btn btn-default" data-slide="next" href="#carousel" role="button">Next</a>
+              </div>
+
+          </div>
+      </div>
+    </div>
+
+    <div class="item" id="email">
+      <div class="container">
+
+          <div class="col-sm-8 col-sm-offset-2">
+
+            <div class="section-head">
+              <h2 class="section-heading">Here's the part where you become a member.</h2>
+              <h3 class="section-subheading text-muted">Don't forget to tag us at #VapeClubMY!</h3>
+              <div class="col-sm-8 col-sm-offset-2 error-message">
+                <div class="details-error">Did you forget something?</div>
+                <div class="email-error">Your email doesn't seem to be correct</div>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-sm-12">
+              <div class="loading-gif">
+                <img src="../assets/loading.gif">
+              </div>
+
+              <div class="contact-container">
+                <div class="col-sm-8 col-sm-offset-2 contact-label">Email</div>
+                <div class="col-sm-8 col-sm-offset-2"><input type="text" id="user-email"></input></div>
+              </div>
+
+              <div class="contact-container">
+                <div class="col-sm-8 col-sm-offset-2 contact-label">Password</div>
+                <div class="col-sm-8 col-sm-offset-2"><input type="password" id="user-password"></input></div>
+              </div>
+
+              <div class="contact-container">
+                <div class="col-sm-8 col-sm-offset-2 contact-label">Password Confirmation</div>
+                <div class="col-sm-8 col-sm-offset-2"><input type="password" id="user-password-confirmation"></input></div>
+              </div>
+
+            </div>
+
+              <div class="col-sm-12 next-submit-btn">
+                <a class="btn btn-default" data-slide="prev" href="#carousel" role="button" >Back</a>
+                <a id="btn-submit" class="btn btn-default" href="#carousel" role="button">Join The Club!</a>
+              </div>
+
+          </div>
+      </div>
+    </div>
+    </div>
+  </div>
+<div>

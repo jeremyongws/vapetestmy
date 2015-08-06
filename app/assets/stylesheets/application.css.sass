@@ -1,0 +1,59 @@
+/*= require_self
+/*= require font-awesome
+/*= require landing
+/*= require users
+
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+@mixin box_sizing 
+	-moz-box-sizing:    border-box
+	-webkit-box-sizing: border-box
+	box-sizing:         border-box
+
+
+/* typography */
+
+
+/* panel containers */
+.center 
+	text-align: center
+
+/* forms */
+
+input, textarea, select, .uneditable-input 
+	border: 1px solid #bbb
+	width: 100%
+	margin-bottom: 15px
+	@include box_sizing
+
+input#user_remember_me
+	width: 3% !important
+
+input 
+	height: auto !important
+
+/* error panels - need to revisit */
+
+#error_explanation 
+	color: red
+	ul
+		color: red
+		margin: 0 0 30px 0
+
+.field_with_errors 
+	@extend .has-error
+	.form-control 
+		color: $state-danger-text
+	
+
+
+.checkbox 
+	margin-top: -10px
+	margin-bottom: 10px
+	span 
+		margin-left: 20px
+		font-weight: normal
+
+/* form for new users */
+
