@@ -8,6 +8,12 @@
 
           <div class="col-sm-8 col-sm-offset-2">
             <div class="section-head">
+              <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                  0% Complete
+                </div>
+              </div>
               <h2 class="section-heading">Pick the awesomest of them all!</h2>
               <h3 class="section-subheading text-muted">Break the rules and pick more than one</h3>
                <div class="col-sm-8 col-sm-offset-2 error-message activity-error">Dude, are you not into awesomeness?</div>
@@ -40,10 +46,9 @@
             <div class="col-sm-12 next-submit-btn">
               <a id="first-button" class="btn btn-default" data-slide="next" href="#carousel" role="button">Next</a>
             </div>
-
-
           </div>
       </div>
+      <%= render "users/shared/links" %>
     </div>
 
     <div class="item" id="feedback">
@@ -51,6 +56,12 @@
 
           <div class="col-sm-10 col-sm-offset-1">
             <div class="section-head">
+              <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                  25% Complete
+                </div>
+              </div>
                 <h2 class="section-heading">Any Flavors You Absolutely Don't Like?</h2>
             </div>
               <div class="col-sm-8 col-sm-offset-2">
@@ -59,9 +70,8 @@
 
               <div class="col-sm-12 next-submit-btn">
                 <a class="btn btn-default" data-slide="prev" href="#carousel" role="button" >Back</a>
-                <a class="btn btn-default" data-slide="next" href="#carousel" role="button">Next</a>
+                <a class="btn btn-default" data-slide="next" id="second-button" href="#carousel" role="button">Next</a>
               </div>
-
           </div>
       </div>
     </div>
@@ -71,17 +81,22 @@
 
           <div class="col-sm-10 col-sm-offset-1">
             <div class="section-head">
-                <h2 class="section-heading">Any other preferences or special requests? <br/>(We'll do out best to honor them.) </h2>
+              <div class="progress">
+                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="50"
+                aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                  50% Complete
+                </div>
+              </div>
+              <h2 class="section-heading">Any other preferences or special requests? <br/>(We'll do out best to honor them.) </h2>
             </div>
               <div class="col-sm-8 col-sm-offset-2">
-                <textarea rows="8" placeholder="Let us know!" id="feedback"></textarea>
+                <textarea rows="8" placeholder="Let us know!" id="likes"></textarea>
               </div>
 
               <div class="col-sm-12 next-submit-btn">
                 <a class="btn btn-default" data-slide="prev" href="#carousel" role="button" >Back</a>
                 <a class="btn btn-default" data-slide="next" href="#carousel" role="button">Next</a>
               </div>
-
           </div>
       </div>
     </div>
@@ -92,6 +107,12 @@
           <div class="col-sm-8 col-sm-offset-2">
 
             <div class="section-head">
+            <div class="progress">
+              <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="75"
+              aria-valuemin="0" aria-valuemax="100" style="width:75%">
+                75% Complete (almost there!)
+              </div>
+            </div>
               <h2 class="section-heading">Here's the part where you become a member.</h2>
               <h3 class="section-subheading text-muted">Don't forget to tag us at #VapeClubMY!</h3>
               <div class="col-sm-8 col-sm-offset-2 error-message">
@@ -127,7 +148,6 @@
                 <a class="btn btn-default" data-slide="prev" href="#carousel" role="button" >Back</a>
                 <a id="btn-submit" class="btn btn-default" href="#carousel" role="button">Join The Club!</a>
               </div>
-
           </div>
       </div>
     </div>

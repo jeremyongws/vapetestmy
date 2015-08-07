@@ -10,7 +10,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
+    if User.where(email: params[:user_email]).length == 0
+      @user = User.create(email: params[:user_email],
+                password: params[:user_password],
+                password_confirmation: params[:user_password_confirmation],
+                likes: params[:feedback],
+                dislikes: params[:dislike_feedback])
+      params[:packages_selected].each do |preference|
+        Preference.create(user_id: @user.id,
+                          name: preference)
+      end
+      sign_in(@user)
+      render "memberships/new"
+    else
+      render :error #render some fail messaging html
+    end
+    
   end
 
   # GET /resource/edit
@@ -40,22 +55,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
     protected
 
     # If you have extra params to permit, append them to the sanitizer.
-    def configure_sign_up_params
-      devise_parameter_sanitizer.for(:sign_up) << :attribute
-    end
+    # def configure_sign_up_params
+    #   devise_parameter_sanitizer.for(:sign_up) << :attribute
+    # end
 
     # If you have extra params to permit, append them to the sanitizer.
-    def configure_account_update_params
-      devise_parameter_sanitizer.for(:account_update) << :attribute
-    end
+    # def configure_account_update_params
+    #   devise_parameter_sanitizer.for(:account_update) << :attribute
+    # end
 
     # The path used after sign up.
-    def after_sign_up_path_for(resource)
-      super(resource)
-    end
+    # def after_sign_up_path_for(resource)
+    #   super(resource)
+    # end
 
     # The path used after sign up for inactive accounts.
-    def after_inactive_sign_up_path_for(resource)
-      super(resource)
-    end
+    # def after_inactive_sign_up_path_for(resource)
+    #   super(resource)
+    # end
 end

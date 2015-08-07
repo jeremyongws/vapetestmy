@@ -79,8 +79,9 @@ $(function() {
 		detailsEmpty();
 		e.preventDefault();
 		var dislike = $("#dislike").val()
-		var feedback = $("#feedback").val()
-		var userName = $("#user-name").val()
+		var feedback = $("#likes").val()
+		var userPassword = $("#user-password").val()
+		var userPasswordConfirmation = $("#user-password-confirmation").val()
 		var userEmail = $("#user-email").val()
 		
 		$.ajax({
@@ -90,7 +91,8 @@ $(function() {
 				packages_selected: packagesArray,
 				dislike_feedback: dislike,
 				feedback: feedback,
-				user_name: userName,
+				user_password: userPassword,
+				user_password_confirmation: userPasswordConfirmation,
 				user_email: userEmail}
 			}).done(function(result) {
 				$(".loading-gif").css("display","none");
