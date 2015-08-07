@@ -96,7 +96,7 @@ $(function() {
 				user_email: userEmail}
 			}).done(function(result) {
 				$(".loading-gif").css("display","none");
-	  			$("#carousel").html(result);
+	  			$("body").html(result);
 			});
 
 		});

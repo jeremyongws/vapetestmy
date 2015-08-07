@@ -1,7 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
-
   # GET /resource/sign_up
   def new
     @user = User.new
@@ -11,11 +10,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     if User.where(email: params[:user_email]).length == 0
+      
       @user = User.create(email: params[:user_email],
                 password: params[:user_password],
                 password_confirmation: params[:user_password_confirmation],
                 likes: params[:feedback],
                 dislikes: params[:dislike_feedback])
+
       params[:packages_selected].each do |preference|
         Preference.create(user_id: @user.id,
                           name: preference)

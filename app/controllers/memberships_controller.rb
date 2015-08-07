@@ -1,5 +1,4 @@
 class MembershipsController < ApplicationController
-
 	before_action :user_signed_in?
 
 	def new # membership views
