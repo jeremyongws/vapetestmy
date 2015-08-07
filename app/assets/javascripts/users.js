@@ -70,7 +70,7 @@ $(function() {
 			$(".email-error" ).css("display","none");
 			$(".jumbotron").hide();
 			$(".loading-gif").appendTo("body");
-			$(".loading-gif").css("display","block")
+			$(".loading-gif").css("display", "block");
 			return true;
 		}
  	}
@@ -95,8 +95,11 @@ $(function() {
 				user_password_confirmation: userPasswordConfirmation,
 				user_email: userEmail}
 			}).done(function(result) {
-				$(".loading-gif").css("display","none");
-	  			$("body").html(result);
+				$(".loading-gif").fadeOut("slow", function(){
+					$("body").html(result);
+					$("body").hide();
+					$("body").fadeIn('slow');
+				});
 			});
 
 		});
