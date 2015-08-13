@@ -21,6 +21,10 @@ $(function() {
 		}
 	});
 
+	var firstValue = "25% Complete"
+	var secondValue = "50% Complete"
+	var thirdValue = "75% Complete (almost there!)"
+
 	$("#first-button").click(function(e){
 		if (packagesArray == "") {
 			e.preventDefault();
@@ -28,8 +32,43 @@ $(function() {
 			return false;
 		}
 		else {
+			$(".progress-bar").attr('aria-valuenow', 25)
+			$(".progress-bar").animate({ width: "25%" }, 2500);
+			$(".progress-bar").text( firstValue );
 			return true;
 		}
+	});
+
+	$("#first-back-button").click(function(e){
+		$(".progress-bar").attr('aria-valuenow', 0)
+		$(".progress-bar").animate({ width: "0%" }, 1500);
+		$(".progress-bar").text( "0% Complete" );
+	});
+
+	$("#second-button").click(function(e){
+		$(".progress-bar").attr('aria-valuenow', 50)
+		$(".progress-bar").animate({ width: "50%" }, 1500);
+		$(".progress-bar").text( secondValue );
+	});
+
+ 	// not functional
+	$("#second-back-button").click(function(e){
+		$(".progress-bar").attr('aria-valuenow', 25)
+		$(".progress-bar").animate({ width: "25%" }, 1500);
+		$(".progress-bar").text( firstValue );
+	});
+
+	$("#third-button").click(function(e){
+		$(".progress-bar").attr('aria-valuenow', 75)
+		$(".progress-bar").animate({ width: "75%" }, 1500);
+		$(".progress-bar").text( thirdValue );
+	});
+
+	// not functional
+	$("#third-back-button").click(function(e){
+		$(".progress-bar").attr('aria-valuenow', 50)
+		$(".progress-bar").animate({ width: "50%" }, 1500);
+		$(".progress-bar").text( secondValue );
 	});
 
  	function detailsEmpty(){
