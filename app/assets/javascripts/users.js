@@ -2,22 +2,9 @@ $(function() {
 
 	$("footer").css("display", "none");
 
-	$("#slider").slider({
-			range: "min",
-			value: 500,
-			min: 0,
-			max: 1000,
-			step: 10,
-			slide: function(event, ui) {
-				$("#amount-label").val("MYR " + ui.value);
-			}
-	});
-
-	$("#amount").val($("#slider").slider("value"));
-	$("#amount-label").val("MYR " + $("#slider").slider("value"));
-
 	var packagesArray = [];
 	var emailFormat = /^[^@\s]+@[^@\s.]+\.[\w]+/i;
+
 
 	$(".activity-option").click(function(){
 		$(this).toggleClass("activity-option-selected")
@@ -70,7 +57,7 @@ $(function() {
 			$(".email-error" ).css("display","none");
 			$(".jumbotron").hide();
 			$(".loading-gif").appendTo("body");
-			$(".loading-gif").css("display", "block");
+			$(".loading-gif").fadeIn("slow");
 			return true;
 		}
  	}
@@ -78,11 +65,11 @@ $(function() {
 	$("#btn-submit").click(function(e){
 		detailsEmpty();
 		e.preventDefault();
-		var dislike = $("#dislike").val()
-		var feedback = $("#likes").val()
-		var userPassword = $("#user-password").val()
-		var userPasswordConfirmation = $("#user-password-confirmation").val()
-		var userEmail = $("#user-email").val()
+		var dislike = $("#dislike").val();
+		var feedback = $("#likes").val();
+		var userPassword = $("#user-password").val();
+		var userPasswordConfirmation = $("#user-password-confirmation").val();
+		var userEmail = $("#user-email").val();
 		
 		$.ajax({
 			type: "POST",
@@ -95,10 +82,10 @@ $(function() {
 				user_password_confirmation: userPasswordConfirmation,
 				user_email: userEmail}
 			}).done(function(result) {
-				$(".loading-gif").fadeOut("slow", function(){
+				$(".loading-gif").fadeOut("fast", function(){
 					$("body").html(result);
-					$("body").hide();
-					$("body").fadeIn('slow');
+					$("body").toggle();
+					$("body").fadeIn('fast');
 				});
 			});
 
