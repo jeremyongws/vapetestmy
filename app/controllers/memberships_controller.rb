@@ -4,10 +4,19 @@ class MembershipsController < ApplicationController
 	def new # membership views
 	end
 
-	def create # POST to iPay88 API
+	def create # POST to payment gateway API
 	end
 
 	def destroy # DESTROY subscription
 	end
 
+	def single
+	end
+
+	def subscription
+	end
+
+	def thank_you
+	end
+	
 end
