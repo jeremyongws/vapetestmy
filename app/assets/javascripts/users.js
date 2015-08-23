@@ -91,9 +91,9 @@ $(function() {
 			return false;
 		}
 		else {
-			$(".error-message" ).css("display","none");
-			$(".details-error" ).css("display","none");
-			$(".email-error" ).css("display","none");
+			$(".error-message").css("display","none");
+			$(".details-error").css("display","none");
+			$(".email-error").css("display","none");
 			$(".jumbotron").hide();
 			$(".loading-gif").appendTo("body");
 			$(".loading-gif").fadeIn("slow");

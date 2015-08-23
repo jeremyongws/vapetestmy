@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
 	  # else
 	  # 	@orders = @user.orders
 	  # end
+	  byebug
 	end
 
 end
