@@ -26,7 +26,7 @@
                 <% if count % 2 == 0 %>
                   <div class="col-sm-6">
 
-                    <div class="activity-option">
+                    <div class="activity-option" id="activity-col-1">
                         <i class="fa fa-circle"></i>
                         <i class="fa fa-check-circle hidden"></i>
                         <span class="activity-text"><%= flavor.name %></span>
@@ -34,7 +34,7 @@
                   </div>
                 <% else %>
                   <div class="col-sm-6">
-                      <div class="activity-option">
+                      <div class="activity-option" id="activity-col-2">
                           <i class="fa fa-circle"></i>
                           <i class="fa fa-check-circle hidden"></i>
                           <span class="activity-text"><%= flavor.name %></span>
