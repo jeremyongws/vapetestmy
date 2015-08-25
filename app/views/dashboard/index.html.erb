@@ -1,46 +1,48 @@
-INZERT DASHBOARD HERE
-
 <div class="table-responsive">
     <table class="table">
         <thead>
             <tr>
-                <th>Row</th>
-                <th>Bill</th>
-                <th>Payment Date</th>
-                <th>Payment Status</th>
+                <th>Order #</th>
+                <th>Order Date</th>
+                <th>Membership Level</th>
+                <th>Member Name</th>
+                <th>Shipping Address</th>
+                <th>Tracking ID</th>
+                <th>Preferences</th>
             </tr>
         </thead>
         <tbody>
-        	<tr class="active">
-                <td>1</td>
-                <td>Credit Card</td>
-                <td>04/07/2014</td>
-                <td>Call in to confirm</td>
-            </tr>
-            <tr class="success">
-                <td>2</td>
-                <td>Water</td>
-                <td>01/07/2014</td>
-                <td>Paid</td>
-            </tr>
-            <tr class="info">
-                <td>3</td>
-                <td>Internet</td>
-                <td>05/07/2014</td>
-                <td>Change plan</td>
-            </tr>
-            <tr class="warning">
-                <td>4</td>
-                <td>Electricity</td>
-                <td>03/07/2014</td>
-                <td>Pending</td>
-            </tr>
-            <tr class="danger">
-                <td>5</td>
-                <td>Telephone</td>
-                <td>06/07/2014</td>
-                <td>Due</td>
-            </tr>
+        	<% @orders.each do |order| %>
+                <tr class="success">
+                    <td>
+                        <%= order.id.to_s %>
+                    </td>
+                    <td>
+                        <%= order.created_at.to_s %>
+                    </td>
+                    <td>
+                        <% if order.user.member_level == 1 %>
+                            Trial
+                        <% else %>
+                            Member
+                        <% end %>
+                    </td>
+                    <td>
+                        <%= order.user.first_name + " " + order.user.last_name %>
+                    </td>
+                    <td>
+                        <%= order.street_address + " " + order.city + " " + order.postcode.to_s + " " + order.state %>
+                    </td>
+                    <td>
+                        INZERT TRCKING ID FORM HERE
+                    </td>
+                    <td>
+                        <% order.user.preferences.each do |preference| %>
+                        <%= preference.name + " " %>
+                        <% end %>
+                    </td>
+                </tr>
+            <% end %>
         </tbody>
     </table>
 </div>

@@ -1,0 +1,46 @@
+<h2>Membership Level :  <% if @user.member_level == 1 %>
+                            VapeClubMY Member
+                        <% else %>
+                            Trial
+                        <% end %> </h2>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order Created</th>
+                <th>Price Paid</th>
+                <th>Tracking ID</th>
+                <th>Shipping Address</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<% @orders.each do |order| %>
+                <tr class="success">
+                    <td>
+                        <%= order.created_at.to_s %>
+                    </td>
+                    <td>
+                        <% if @user.member_level == 1 %>
+                            RM129.90
+                        <% else %>
+                            RM119.90
+                        <% end %>
+                    </td>
+                    <td>
+                        <% if order.tracking_id.nil? %>
+                            Not Shipped
+                        <% else %>
+                            <%= order.tracking_id %>
+                        <% end %>
+                    </td>
+                    <td>
+                        <%= order.street_address + " " + order.city + " " + order.postcode + " " + order.state %>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>                                		
