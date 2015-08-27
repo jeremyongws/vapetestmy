@@ -1,8 +1,15 @@
 <h2>Membership Level :  <% if @user.member_level == 1 %>
-                            VapeClubMY Member
+                            VapeClubMY Member (member ID: <%= @user.id.to_s %>)
                         <% else %>
                             Trial
                         <% end %> </h2>
+
+<% if @user.member_level == 2 %>
+    <h3>Want To Cancel Your Membership? Contact Us at +6019-3465391(WhatsApp/Call)</h3>
+<% else %>
+    <h3>Click the link below to upgrade your membership now for more savings!</h3>
+    <a href="/memberships/subscription">Upgrade today.</a>
+<% end %>
 
 <div class="table-responsive">
     <table class="table">

@@ -34,7 +34,16 @@
                         <%= order.street_address + " " + order.city + " " + order.postcode.to_s + " " + order.state %>
                     </td>
                     <td>
-                        INSERT FORM FOR TRACKING ID HERE
+                        <% if order.tracking_id == nil %>
+                            <form href="/">
+                                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                                <input name="order_id" value="<%= order.id %>" type="hidden">
+                                <input type="text" name="tracking_id">
+                                <input type="submit" value="Submit" class="submit-tracking">
+                            </form>
+                        <% else %>
+                            <%= order.tracking_id %>
+                        <% end %>
                     </td>
                     <td>
                         <% order.user.preferences.each do |preference| %>

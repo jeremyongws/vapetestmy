@@ -11,10 +11,14 @@ Rails.application.routes.draw do
   root 'dashboard#index'
   post 'memberships/new'
 
+  post 'membership_order' => 'memberships#subscription_order'
+  post 'single_order' => 'memberships#single_order'
+
   get 'memberships/single' => 'memberships#single'
   get 'memberships/thank_you' => 'memberships#thank_you'
   get 'memberships/subscription' => 'memberships#subscription'
-  # get 'memberships/new' => 'memberships#new'
+
+  post 'admin/update_tracking' => 'dashboard#update_tracking'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -6,14 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@flavor1 = Flavor.create(name: "Menthol")
+@flavor1 = Flavor.create(name: "Icy")
 @flavor2 = Flavor.create(name: "Fruity")
 @flavor3 = Flavor.create(name: "Creamy")
 @flavor4 = Flavor.create(name: "Candy")
 @flavor5 = Flavor.create(name: "Cloudy")
 @flavor6 = Flavor.create(name: "Carbonated Drinks")
 @flavor7 = Flavor.create(name: "Dessert")
-@flavor8 = Flavor.create(name: "Surprise Me!")
+@flavor8 = Flavor.create(name: "Coffee")
 @admin = User.create(email: "jeremy@vapeclubmy.com", password: "cipapbesi", password_confirmation: "cipapbesi", member_level: 0)
 
 30.times do
