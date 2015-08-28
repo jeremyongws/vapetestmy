@@ -9,7 +9,25 @@
     </div>
     <div class="carousel-inner" role="listbox">
 
-      <div class="item active" id="package">
+      <div class="item active" id="flavor-survey">
+        <div class="container">
+
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="section-head">
+              <h2 class="section-heading">Flavor Profile Survey</h2>
+              <h3 class="section-subheading text-muted">Take this flavor profile survey so we can send you a personalized box.</h3>
+            </div>
+
+            <div class="col-sm-12 next-submit-btn">
+              <a class="btn btn-default" style="background-color: #80CBC4;" data-slide="next" href="#carousel" role="button" class="start">Begin The Flavor Survey Now!</a>
+              <a class="btn btn-default" data-slide-to="2" href="#carousel" role="button" class="start">No thanks, I like surprises.</a>
+            </div>
+          </div>
+      </div>
+      <%= render "users/shared/links" %>
+    </div>
+
+      <div class="item" id="package">
         <div class="container">
 
           <div class="col-sm-8 col-sm-offset-2">
@@ -49,7 +67,6 @@
             </div>
           </div>
       </div>
-      <%= render "users/shared/links" %>
     </div>
 
     <div class="item" id="feedback">

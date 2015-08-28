@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
   post 'memberships/new'
+  get 'memberships/new'
 
   post 'membership_order' => 'memberships#subscription_order'
   post 'single_order' => 'memberships#single_order'

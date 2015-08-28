@@ -1,5 +1,6 @@
 $(function() {
 
+	$(".progress").css("display", "none");
 	$("footer").css("display", "none");
 
 	var packagesArray = [];
@@ -20,6 +21,10 @@ $(function() {
 			packagesArray.splice(index ,1)
 		}
 	});
+
+	$(".start").click(function(e){
+		$(".progress").toggle();
+	})
 
 	var firstValue = "25% Complete"
 	var secondValue = "50% Complete"

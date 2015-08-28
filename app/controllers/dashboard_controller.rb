@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 	
 	def index
+		byebug
 		if current_user.nil?
 			redirect_to "/users/sign_in"
 		elsif current_user.member_level == 1 || current_user.member_level == 2
@@ -13,7 +14,7 @@ class DashboardController < ApplicationController
 	end
 
 	def update_tracking
-		@order = Order.find(params[:order_id].to_s)
+		@order = Order.find(params[:order_id])
 		@user = User.find(@order.user_id)
 		@order.tracking_id = params[:tracking_id]
 		@order.save
