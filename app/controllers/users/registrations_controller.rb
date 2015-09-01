@@ -15,10 +15,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
                 password_confirmation: params[:user_password_confirmation],
                 vape_age: params[:age],
                 dislikes: params[:dislike_feedback])
-
-      params[:packages_selected].each do |preference|
-        Preference.create(user_id: @user.id,
-                          name: preference)
+      if params[:packages_selected] != nil
+        params[:packages_selected].each do |preference|
+          Preference.create(user_id: @user.id,
+                            name: preference)
+        end
+      else
+        Preference.create(user_id: @user.id, name: "Surprise Lover")
       end
       sign_in(@user)
       render "memberships/new"

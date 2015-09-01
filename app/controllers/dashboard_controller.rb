@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 	
 	def index
+		byebug
 		if current_user.nil?
 			redirect_to "/users/sign_in"
 		elsif current_user.member_level == 1 || current_user.member_level == 2

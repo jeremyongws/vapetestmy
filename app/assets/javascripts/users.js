@@ -5,7 +5,7 @@ $(function() {
 
 	$("#slider").slider({
 			range: "min",
-			value: 1,
+			value: 2,
 			min: 0,
 			max: 5,
 			step: 1,
@@ -15,6 +15,9 @@ $(function() {
 				} 
 				else if (ui.value === 5) {
 					$("#amount-label").val("More than " + ui.value + " Years");
+				} 
+				else if (ui.value === 1) {
+					$("#amount-label").val(ui.value + " Year");
 				} 
 				else {
 					$("#amount-label").val(ui.value + " Years");	
@@ -156,7 +159,9 @@ $(function() {
 				$(".loading-gif").fadeOut("fast", function(){
 					$("body").html(result);
 					$("body").toggle();
-					$("body").fadeIn('fast');
+					$("body").fadeIn('fast', function(){
+						$(".progress").css("display", "block");
+					});
 				});
 			});
 		});

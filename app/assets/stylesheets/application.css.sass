@@ -7,6 +7,13 @@
 
 @import "bootstrap-sprockets"
 @import "bootstrap"
+@font-face
+	font-family: 'Oswald-Demibold'
+	src: url('/assets/fonts/Oswald-DemiBold.ttf')
+
+@font-face
+	font-family: 'Oswald-Regular'
+	src: url('/assets/fonts/Oswald-Regular.ttf')
 
 @mixin box_sizing 
 	-moz-box-sizing:    border-box
@@ -18,8 +25,18 @@
 
 
 /* panel containers */
+
+body
+	background-color: black
+	font-family: 'Oswald-Regular'
+	h2
+		font-family: 'Oswald-Demibold'
+
 .center 
 	text-align: center
+	.special-width
+		width: 50%
+		margin: auto
 
 /* forms */
 
@@ -34,6 +51,16 @@ input#user_remember_me
 
 input 
 	height: auto !important
+
+.actions 
+	.btn-primary
+		background-color: black
+		color: white
+
+	.btn-primary:hover
+		background-color: #D4A017
+		color: black
+
 
 /* error panels - need to revisit */
 
@@ -50,6 +77,12 @@ input
 	
 .jumbotron
 	padding-top: 24px !important
+	width: 90%
+	align-items: center
+	margin: auto
+	border-radius: 25px
+	background-color: white
+
 
 .checkbox 
 	margin-top: -10px
