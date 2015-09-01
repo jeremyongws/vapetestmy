@@ -31,7 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       # Preferences
       t.string :dislikes
-      t.string :likes
+      t.string :vape_age
 
       ## Confirmable
       # t.string   :confirmation_token

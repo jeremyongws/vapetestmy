@@ -10,11 +10,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     if User.where(email: params[:user_email]).length == 0
-      
       @user = User.create(email: params[:user_email],
                 password: params[:user_password],
                 password_confirmation: params[:user_password_confirmation],
-                likes: params[:feedback],
+                vape_age: params[:age],
                 dislikes: params[:dislike_feedback])
 
       params[:packages_selected].each do |preference|

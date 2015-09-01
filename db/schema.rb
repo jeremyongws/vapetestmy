@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150821054617) do
     t.string   "phone_number"
     t.integer  "member_level",           default: 0,  null: false
     t.string   "dislikes"
-    t.string   "likes"
+    t.string   "vape_age"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end

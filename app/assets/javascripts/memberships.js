@@ -2,7 +2,6 @@
 // load up billing form .html >> 
 
 $(function() {
-
 	$("#btn-1").click(function(e){
 		$(".jumbotron").hide();
 		$(".loading-gif").appendTo("body");

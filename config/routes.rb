@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'memberships/new'
   get 'memberships/new'
 
+  get 'thank_you' => 'memberships#thank_you'
+
   post 'membership_order' => 'memberships#subscription_order'
   post 'single_order' => 'memberships#single_order'
 

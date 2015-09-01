@@ -3,6 +3,28 @@ $(function() {
 	$(".progress").css("display", "none");
 	$("footer").css("display", "none");
 
+	$("#slider").slider({
+			range: "min",
+			value: 1,
+			min: 0,
+			max: 5,
+			step: 1,
+			slide: function(event, ui) {
+				if (ui.value === 0 ) {
+					$("#amount-label").val("Less than 1 year");
+				} 
+				else if (ui.value === 5) {
+					$("#amount-label").val("More than " + ui.value + " Years");
+				} 
+				else {
+					$("#amount-label").val(ui.value + " Years");	
+				}
+			}
+	});
+
+	$("#amount").val($("#slider").slider("value"));
+	$("#amount-label").val($("#slider").slider("value") + " years");
+
 	var packagesArray = [];
 	var emailFormat = /^[^@\s]+@[^@\s.]+\.[\w]+/i;
 
@@ -24,6 +46,11 @@ $(function() {
 
 	$(".start").click(function(e){
 		$(".progress").toggle();
+		if ($(this).hasClass("start2")) {
+			$(".progress-bar").attr('aria-valuenow', 25);
+			$(".progress-bar").animate({ width: "25%" }, 2500);
+			$(".progress-bar").text( firstValue );
+		}
 	})
 
 	var firstValue = "25% Complete"
@@ -110,7 +137,7 @@ $(function() {
 		detailsEmpty();
 		e.preventDefault();
 		var dislike = $("#dislike").val();
-		var feedback = $("#likes").val();
+		var age = $("#amount").val();
 		var userPassword = $("#user-password").val();
 		var userPasswordConfirmation = $("#user-password-confirmation").val();
 		var userEmail = $("#user-email").val();
@@ -121,7 +148,7 @@ $(function() {
 			data: {
 				packages_selected: packagesArray,
 				dislike_feedback: dislike,
-				feedback: feedback,
+				age: age,
 				user_password: userPassword,
 				user_password_confirmation: userPasswordConfirmation,
 				user_email: userEmail}
