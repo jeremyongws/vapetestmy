@@ -3,31 +3,6 @@ $(function() {
 	$(".progress").css("display", "none");
 	$("footer").css("display", "none");
 
-	$("#slider").slider({
-			range: "min",
-			value: 2,
-			min: 0,
-			max: 5,
-			step: 1,
-			slide: function(event, ui) {
-				if (ui.value === 0 ) {
-					$("#amount-label").val("Less than 1 year");
-				} 
-				else if (ui.value === 5) {
-					$("#amount-label").val("More than " + ui.value + " Years");
-				} 
-				else if (ui.value === 1) {
-					$("#amount-label").val(ui.value + " Year");
-				} 
-				else {
-					$("#amount-label").val(ui.value + " Years");	
-				}
-			}
-	});
-
-	$("#amount").val($("#slider").slider("value"));
-	$("#amount-label").val($("#slider").slider("value") + " years");
-
 	var packagesArray = [];
 	var emailFormat = /^[^@\s]+@[^@\s.]+\.[\w]+/i;
 
@@ -45,6 +20,15 @@ $(function() {
 			var index = packagesArray.indexOf(packageText);
 			packagesArray.splice(index ,1)
 		}
+	});
+
+	$(".vape-age-option").click(function(){
+		$(this).toggleClass("vape-age-option-selected")
+		$(this).find(".fa").toggleClass("fa-selected")
+		$(this).find(".fa-circle").toggleClass("hidden")
+		$(this).find(".fa-check-circle").toggleClass("hidden")
+		var vapeAgeText = $(this).find(".vape-age-text").text()
+		// incomplete - to trigger carousel upon clicking vape-age-option
 	});
 
 	$(".start").click(function(e){
@@ -154,7 +138,8 @@ $(function() {
 				age: age,
 				user_password: userPassword,
 				user_password_confirmation: userPasswordConfirmation,
-				user_email: userEmail}
+				user_email: userEmail,
+				vape_age: vapeAgeText}
 			}).done(function(result) {
 				$(".loading-gif").fadeOut("fast", function(){
 					$("body").html(result);

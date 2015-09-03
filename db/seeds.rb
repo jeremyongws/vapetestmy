@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-@flavor1 = Flavor.create(name: "Ice")
+@flavor1 = Flavor.create(name: "Menthol")
 @flavor2 = Flavor.create(name: "Fruity")
 @flavor3 = Flavor.create(name: "Creamy")
 @flavor4 = Flavor.create(name: "Candy")
