@@ -27,8 +27,6 @@ $(function() {
 		$(this).find(".fa").toggleClass("fa-selected")
 		$(this).find(".fa-circle").toggleClass("hidden")
 		$(this).find(".fa-check-circle").toggleClass("hidden")
-		var vapeAgeText = $(this).find(".vape-age-text").text()
-		// incomplete - to trigger carousel upon clicking vape-age-option
 	});
 
 	$(".start").click(function(e){
@@ -128,7 +126,7 @@ $(function() {
 		var userPassword = $("#user-password").val();
 		var userPasswordConfirmation = $("#user-password-confirmation").val();
 		var userEmail = $("#user-email").val();
-		
+		var vapeAgeText = $(".vape-age-option-selected").text();
 		$.ajax({
 			type: "POST",
 			url: '/users',

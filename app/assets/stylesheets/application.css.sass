@@ -7,13 +7,6 @@
 
 @import "bootstrap-sprockets"
 @import "bootstrap"
-@font-face
-	font-family: 'Oswald-Demibold'
-	src: assets-url('/assets/fonts/Oswald-DemiBold.ttf')
-
-@font-face
-	font-family: 'Oswald-Regular'
-	src: assets-url('/assets/fonts/Oswald-Regular.ttf')
 
 @mixin box_sizing 
 	-moz-box-sizing:    border-box
@@ -28,9 +21,10 @@
 
 body
 	background-color: black
-	font-family: 'Oswald-Regular'
+	font-family: 'Oswald', sans-serif
 	h2
-		font-family: 'Oswald-Demibold'
+		font-family: 'Oswald', sans-serif
+		font-weight: bold
 
 .center 
 	text-align: center

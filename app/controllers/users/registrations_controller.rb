@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       @user = User.create(email: params[:user_email],
                 password: params[:user_password],
                 password_confirmation: params[:user_password_confirmation],
-                vape_age: params[:age],
+                vape_age: params[:vape_age].strip,
                 dislikes: params[:dislike_feedback])
       if params[:packages_selected] != nil
         params[:packages_selected].each do |preference|
