@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get 'memberships/subscription' => 'memberships#subscription'
 
   post 'admin/update_tracking' => 'dashboard#update_tracking'
-
+  post 'admin/update_flavors' => 'dashboard#update_flavors'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

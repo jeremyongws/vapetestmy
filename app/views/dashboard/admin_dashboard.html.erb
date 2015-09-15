@@ -9,6 +9,7 @@
                 <th>Shipping Address</th>
                 <th>Tracking ID</th>
                 <th>Preferences</th>
+                <th>Flavours</th>
             </tr>
         </thead>
         <tbody>
@@ -38,7 +39,7 @@
                             <form href="/">
                                 <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
                                 <input name="order_id" value="<%= order.id %>" type="hidden">
-                                <input type="text" name="tracking_id">
+                                <input type="text" name="tracking_id" placeholder="Insert full tracking ID here.">
                                 <input type="submit" value="Submit" class="submit-tracking">
                             </form>
                         <% else %>
@@ -48,6 +49,18 @@
                     <td>
                         <% order.user.preferences.each do |preference| %>
                         <%= preference.name + " " %>
+                        <% end %>
+                    </td>
+                    <td>
+                       <% if order.tracking_id == nil %>
+                            <form href="/">
+                                <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                                <input name="order_id" value="<%= order.id %>" type="hidden">
+                                <input type="text" name="flavors" placeholder="Insert ',' between each flavors">
+                                <input type="submit" value="Submit" class="submit-flavors">
+                            </form>
+                        <% else %>
+                            <%= order.flavors %>
                         <% end %>
                     </td>
                 </tr>

@@ -10,6 +10,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :postcode
       t.string :state
       t.string :phone_number
+      t.string :flavors
 
       t.timestamps null: false
     end

@@ -22,6 +22,15 @@ class DashboardController < ApplicationController
 		OrderMailer.tracking_id(@user, @order.tracking_id).deliver_now
 		render html: "#{@order.tracking_id}"
 	end
+
+	def update_flavors
+		@order = Order.find(params[:order_id])
+		@user = User.find(@order.user_id)
+		@order.flavors = params[:flavors]
+		@order.save
+		# email not tested 
+		render html: "#{@order.flavors}"
+	end
 end
 
 
