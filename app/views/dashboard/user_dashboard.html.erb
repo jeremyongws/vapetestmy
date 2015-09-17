@@ -1,12 +1,14 @@
-<h2>Membership Level :  <% if @user.member_level == 1 %>
-                            VapeClubMY Member (member ID: <%= @user.id.to_s %>)
-                        <% else %>
-                            Trial
+<h2>Membership Level :  <% if current_user.member_level == 2 %>
+                            <h3>VapeClubMY Member (member ID: <%= current_user.id.to_s %>)</h3>
+                        <% elsif current_user.member_level == 1 %>
+                            <h3>VapeClubMY Trial</h3>
+                        <% elsif current_user.member_level == 3 %>
+                            <h3>No membership yet - visit <a href="/memberships/new">this page</a> to get your membership today!</h3>
                         <% end %> </h2>
 
-<% if @user.member_level == 2 %>
+<% if current_user.member_level == 2 %>
     <h3>Want To Cancel Your Membership? Contact Us at +6019-3465391(WhatsApp/Call)</h3>
-<% else %>
+<% elsif current_user.member_level == 1 %>
     <h3>Click the link below to upgrade your membership now for more savings!</h3>
     <a href="/memberships/subscription">Upgrade today.</a>
 <% end %>

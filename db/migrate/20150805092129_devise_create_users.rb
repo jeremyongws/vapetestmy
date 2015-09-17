@@ -27,7 +27,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :postcode
       t.string :state
       t.string :phone_number
-      t.integer :member_level, default: 0, null: false
+      t.integer :member_level, default: 3, null: false
 
       # Preferences
       t.string :dislikes

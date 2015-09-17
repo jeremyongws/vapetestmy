@@ -10,6 +10,7 @@
                 <th>Tracking ID</th>
                 <th>Preferences</th>
                 <th>Flavours</th>
+                <th>Paid?</th>
             </tr>
         </thead>
         <tbody>
@@ -62,6 +63,9 @@
                         <% else %>
                             <%= order.flavors %>
                         <% end %>
+                    </td>
+                    <td>
+                       <%= order.paid %>
                     </td>
                 </tr>
             <% end %>

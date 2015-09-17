@@ -28,11 +28,14 @@ ActiveRecord::Schema.define(version: 20150821054617) do
     t.string   "city"
     t.integer  "postcode"
     t.string   "state"
-    t.string   "phone_number"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "flavors"
+    t.string   "bill_id"
+    t.boolean  "paid",           default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
+  add_index "orders", ["bill_id"], name: "index_orders_on_bill_id"
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "preferences", force: :cascade do |t|
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150821054617) do
     t.string   "postcode"
     t.string   "state"
     t.string   "phone_number"
-    t.integer  "member_level",           default: 0,  null: false
+    t.integer  "member_level",           default: 3,  null: false
     t.string   "dislikes"
     t.string   "vape_age"
     t.datetime "created_at",                          null: false

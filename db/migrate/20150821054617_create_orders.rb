@@ -9,11 +9,13 @@ class CreateOrders < ActiveRecord::Migration
       t.string :city
       t.integer :postcode
       t.string :state
-      t.string :phone_number
       t.string :flavors
+      t.string :bill_id
+      t.boolean :paid, default: false
 
       t.timestamps null: false
     end
     add_index :orders, :user_id
+    add_index :orders, :bill_id
   end
 end
